@@ -1,15 +1,24 @@
-let timer = 5;
-//this function will run for the whole game. use clearInterval calling the last question as a parameter
-let start = setInterval(function(){
-    timer--
-console.log(timer)
-},1000)
-clearInterval(5)
+let startEl= document.getElementById('start')
+let timer = 60
+let timerInterval = setInterval(function(){
+timer--;
+if(timer<=0){
+    clearInterval(timerInterval);
+}
+}, 1000)
+
+ 
+ startEl.addEventListener('click', function(event){
+    document.getElementById('start').setAttribute( 'start', 'hide')
+    event.stopPropagation()
+})
+// clearInterval(5)
 //timer is now player score
 //object will hold a data-index, and style. next button will grab the array. where to store the questions? they would have to be in the object array so I can swap them out. yes they are in the array.
-let qusestions = [
+let questions = [
     {
     question:"What does HTML stand for?",
+
     answers:["Hyperlinks and Text Markup Language", 
     "Home Tool Markup Language", 
     "Hyper Text Markup Language"
@@ -104,3 +113,8 @@ let qusestions = [
     }
 
 ]
+
+let currentQuestion = 0;
+document.querySelector("#question-title").textContent = questions[1].question;
+
+document.querySelector('#choices').innerHTML= `<button>${questions[0].answers}</button>`
