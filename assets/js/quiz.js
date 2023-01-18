@@ -1,17 +1,22 @@
 let startEl= document.getElementById('start')
-let timer = 60
+let countdown = 60
 let timerInterval = setInterval(function(){
-timer--;
-if(timer<=0){
+countdown--;
+if(countdown<=0){
     clearInterval(timerInterval);
-}
+    }
 }, 1000)
-
- 
- startEl.addEventListener('click', function(event){
-    document.getElementById('start').setAttribute( 'start', 'hide')
-    event.stopPropagation()
-})
+    startEl.addEventListener('click', function(event){
+    document.getElementById('start')
+    if(startEl === true){
+        setAttribute('class', 'hide')}
+        else{
+            setAttribute('class', 'visable')
+        }
+    
+      })
+    
+// })
 // clearInterval(5)
 //timer is now player score
 //object will hold a data-index, and style. next button will grab the array. where to store the questions? they would have to be in the object array so I can swap them out. yes they are in the array.
@@ -117,4 +122,4 @@ let questions = [
 let currentQuestion = 0;
 document.querySelector("#question-title").textContent = questions[1].question;
 
-document.querySelector('#choices').innerHTML= `<button>${questions[0].answers}</button>`
+document.querySelector('#choices').innerHTML = `<button>${questions[0].answers}</button>`
