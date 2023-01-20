@@ -6,10 +6,13 @@ if(countdown<=0){
     clearInterval(timerInterval);
     }
 }, 1000)
+console.log(startEl)
+
     startEl.addEventListener('click', function(event){
+        event.preventDefault();
     document.getElementById('start')
     if(startEl === true){
-        setAttribute('class', 'hide')}
+        setAttribute('class', 'visable')}
         else{
             setAttribute('class', 'visable')
         }
