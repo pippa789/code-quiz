@@ -1,55 +1,3 @@
-let startScreenEl =document.getElementById('start-screen')
-startScreenEl.setAttribute('class', 'hide')
-let startEl= document.getElementById('start')
-let countdown = 60
-let timerInterval = setInterval(function(){
-countdown--;
-if(countdown<=0){
-    clearInterval(timerInterval);
-    }
-}, 1000)
-
-
-//     startEl.addEventListener('click', function(event){
-//         event.preventDefault();
-//     document.getElementById('start')
-//     if(startEl === true){
-//         setAttribute('class', 'hide')}
-//         else{
-//             setAttribute('class', 'visable')
-//         }
-//         stopProagation(startEl)
-//       })
-    
-// })
-// clearInterval(5)
-//timer is now player score
-//object will hold a data-index, and style. next button will grab the array. where to store the questions? they would have to be in the object array so I can swap them out. yes they are in the array.
-// function startQuiz() {
-//     // hide start screen
-//     var startScreenEl = document.getElementById("start-screen");
-//     startScreenEl.setAttribute("class", "hide");
-//     // un-hide questions section
-//     questionsEl.removeAttribute("class");
-//     // start timer
-//     timerId = setInterval(clockTick, 1000);
-//     // show starting time
-//     timerEl.textContent = time;
-//     getQuestion();
-//   }
-//   // user clicks button to start quiz
-//   startBtn.onclick = startQuiz;
-//   3:12
-//   <div id="start-screen" class="start">
-//           <h1>Coding Quiz Challenge</h1>
-//           <p>
-//             Try to answer the following code-related questions within the time
-//             limit. Keep in mind that incorrect answers will penalize your
-//             score/time by ten seconds!
-//           </p>
-//           <button id="start">Start Quiz</button>
-//         </div>
-
 let questions = [
     {
     question:"What does HTML stand for?",
@@ -148,12 +96,41 @@ let questions = [
     }
 
 ]
+let countdown = 60
+let timerEl =document.getElementById('time')
+let startScreenEl =document.getElementById('start-screen')
+   console.log(start-screen)
+let startEl= document.getElementById('start')
 
-let currentQuestion = 0;
+startEl.addEventListener('click', function(event){
+    event.preventDefault();
+    startScreenEl.setAttribute('class', 'hide')
+    let timerInterval = setInterval(function(){
+        countdown--;
+        timerEl.textContent = countdown;
+        if(countdown<=0){                         clearInterval(timerInterval);
+            }
+        }, 1000)
+        startQuiz()
+})
+function startQuiz() {
+    // show starting time
+   
+    getQuestion();
+  }
+  function getQuestion(){
+
+ 
+
 for (let index = 0; index < questions.length; index++) {
-    const questionsEl = currentQuestion[index];
+    
 }
 document.querySelector("#question-title").textContent = questions[1].question;
 
 
-document.querySelector('#choices').innerHTML = `<div>${questions[0].answers}</div>`
+document.querySelector('#choices').innerHTML = `<button>${questions[0].answers}</button>`     
+}
+
+//set the title of the current question and loop through the answers and create a button for each answer
+// event listender for the ansswer buttons inside need if add time for correct else decrease time .
+//  and a function to increment the questions and answers.
