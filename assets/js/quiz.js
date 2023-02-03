@@ -1,54 +1,54 @@
-let startScreenEl =document.getElementById('start-screen')
-startScreenEl.setAttribute('class', 'hide')
-let startEl= document.getElementById('start')
-let countdown = 60
-let timerInterval = setInterval(function(){
-countdown--;
-if(countdown<=0){
-    clearInterval(timerInterval);
-    }
-}, 1000)
+// let startScreenEl =document.getElementById('start-screen')
+// startScreenEl.setAttribute('class', 'hide')
+// let startEl= document.getElementById('start')
+// let countdown = 60
+// let timerInterval = setInterval(function(){
+// countdown--;
+// if(countdown<=0){
+//     clearInterval(timerInterval);
+//     }
+// }, 1000)
 
 
-//     startEl.addEventListener('click', function(event){
-//         event.preventDefault();
-//     document.getElementById('start')
-//     if(startEl === true){
-//         setAttribute('class', 'hide')}
-//         else{
-//             setAttribute('class', 'visable')
-//         }
-//         stopProagation(startEl)
-//       })
+    startEl.addEventListener('click', function(event){
+        event.preventDefault();
+    document.getElementById('start')
+    if(startEl === true){
+        setAttribute('class', 'hide')}
+        else{
+            setAttribute('class', 'visable')
+        }
+        stopProagation(startEl)
+      })
     
-// })
-// clearInterval(5)
-//timer is now player score
-//object will hold a data-index, and style. next button will grab the array. where to store the questions? they would have to be in the object array so I can swap them out. yes they are in the array.
-// function startQuiz() {
-//     // hide start screen
-//     var startScreenEl = document.getElementById("start-screen");
-//     startScreenEl.setAttribute("class", "hide");
-//     // un-hide questions section
-//     questionsEl.removeAttribute("class");
-//     // start timer
-//     timerId = setInterval(clockTick, 1000);
-//     // show starting time
-//     timerEl.textContent = time;
-//     getQuestion();
-//   }
-//   // user clicks button to start quiz
-//   startBtn.onclick = startQuiz;
-//   3:12
-//   <div id="start-screen" class="start">
-//           <h1>Coding Quiz Challenge</h1>
-//           <p>
-//             Try to answer the following code-related questions within the time
-//             limit. Keep in mind that incorrect answers will penalize your
-//             score/time by ten seconds!
-//           </p>
-//           <button id="start">Start Quiz</button>
-//         </div>
+})
+clearInterval(5)
+timer is now player score
+object will hold a data-index, and style. next button will grab the array. where to store the questions? they would have to be in the object array so I can swap them out. yes they are in the array.
+function startQuiz() {
+    // hide start screen
+    var startScreenEl = document.getElementById("start-screen");
+    startScreenEl.setAttribute("class", "hide");
+    // un-hide questions section
+    questionsEl.removeAttribute("class");
+    // start timer
+    timerId = setInterval(clockTick, 1000);
+    // show starting time
+    timerEl.textContent = time;
+    getQuestion();
+  }
+  // user clicks button to start quiz
+  startBtn.onclick = startQuiz;
+  3:12
+  <div id="start-screen" class="start">
+          <h1>Coding Quiz Challenge</h1>
+          <p>
+            Try to answer the following code-related questions within the time
+            limit. Keep in mind that incorrect answers will penalize your
+            score/time by ten seconds!
+          </p>
+          <button id="start">Start Quiz</button>
+        </div>
 
 let questions = [
     {

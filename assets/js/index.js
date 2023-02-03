@@ -1,3 +1,4 @@
+//this is an array of objects containing the questions, possible answers and the solution.
 let questions = [
     {
     question:"What does HTML stand for?",
@@ -96,18 +97,24 @@ let questions = [
     }
 
 ]
+//setting the timer
 let countdown = 60
+//grabbing the time display
 let timerEl =document.getElementById('time')
+//grabbing the start screen
 let startScreenEl =document.getElementById('start-screen')
-   console.log(start-screen)
 let startEl= document.getElementById('start')
-
+//grabbing the start button
+//setting up start button
 startEl.addEventListener('click', function(event){
     event.preventDefault();
+    //hiding start screen when start btn is clicked
     startScreenEl.setAttribute('class', 'hide')
+    //set timer and increment seconds
     let timerInterval = setInterval(function(){
         countdown--;
         timerEl.textContent = countdown;
+        // end timer at the end of quiz
         if(countdown<=0){                         clearInterval(timerInterval);
             }
         }, 1000)
@@ -122,14 +129,15 @@ function startQuiz() {
 
  
 
-for (let index = 0; index < questions.length; index++) {
+for (let i = 0; i < questions.length; i++) {
     
-}
-document.querySelector("#question-title").textContent = questions[1].question;
 
+//setting the questions
+document.querySelector("#question-title").textContent = questions[0].question;
 
+//make a container with createElement to hold the answers and their buttons
 document.querySelector('#choices').innerHTML = `<button>${questions[0].answers}</button>`     
-}
+}}
 
 //set the title of the current question and loop through the answers and create a button for each answer
 // event listender for the ansswer buttons inside need if add time for correct else decrease time .
