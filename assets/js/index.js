@@ -2,11 +2,12 @@
 let questions = [
     {
     question:"What does HTML stand for?",
-
-    answers:["Hyperlinks and Text Markup Language", 
-    "Home Tool Markup Language", 
-    "Hyper Text Markup Language"
-    ], correctAnswer:2
+    answers:[
+        "Hyperlinks and Text Markup Language", 
+        "Home Tool Markup Language", 
+        "Hyper Text Markup Language"
+    ], 
+    correctAnswer:2
     },
     { 
     question:" Choose the correct HTML element for the largest heading.",
@@ -115,29 +116,27 @@ startEl.addEventListener('click', function(event){
         countdown--;
         timerEl.textContent = countdown;
         // end timer at the end of quiz
-        if(countdown<=0){                         clearInterval(timerInterval);
+        if(countdown<=0){                         
+            clearInterval(timerInterval);
             }
         }, 1000)
         startQuiz()
 })
 function startQuiz() {
-    // show starting time
+
+    // show starting time. map through the array https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_map3
    
     getQuestion();
   }
   function getQuestion(){
-
- 
-
-for (let i = 0; i < questions.length; i++) {
-    
-
+    for(let i = 0; i < questions.length; i++) {
 //setting the questions
-document.querySelector("#question-title").textContent = questions[0].question;
-
-//make a container with createElement to hold the answers and their buttons
-document.querySelector('#choices').innerHTML = `<button>${questions[0].answers}</button>`     
-}}
+        document.querySelector("#question-title").textContent = questions[0].question;
+//setting the question
+        document.querySelector('#choices').innerHTML = `<button>${questions[0].answers[0]}<button>`
+        document.querySelector('#choices').innerHTML = `<button>${questions[0].answers[1]}<button>`
+        document.querySelector('#choices').innerHTML = `<button>${questions[0].answers[2]}<button>`
+    }}
 
 //set the title of the current question and loop through the answers and create a button for each answer
 // event listender for the ansswer buttons inside need if add time for correct else decrease time .

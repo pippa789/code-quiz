@@ -1,11 +1,15 @@
 /* font-family: 'IBM Plex Mono', monospace; */
 
 body {
+  color: #67ea46;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 120%;
   background-color: black;
 }
 #question-title {
+  color: #67ea46;
+}
+p{
   color: #67ea46;
 }
 a {
@@ -34,7 +38,10 @@ button {
 button:hover {
   background-color: #8570a5;
 }
-
+#choices{
+  display: flex;
+  flex-direction: column; 
+}
 .choices button {
   display: flex;
   flex-direction: column;
